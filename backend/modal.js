@@ -18,13 +18,13 @@ async function run() {
   // For text-and-image input (multimodal), use the gemini-pro-vision model
   const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
 
-  const prompt = "Is this is a bus ticket ? reply in Yes or No​ also find the distance travelled";
+  const prompt = "Is this is a bus ticket ? reply in Yes or No and also find the distance travelled";
 
   const imageParts = [
     fileToGenerativePart("bus2.jpeg", "image/jpeg"),
-    fileToGenerativePart("bus1.jpeg", "image/jpeg"),
-    fileToGenerativePart("train1.jpeg", "image/jpeg"),
-    fileToGenerativePart("dog.jpeg", "image/jpeg"),
+    // fileToGenerativePart("bus1.jpeg", "image/jpeg"),
+    // fileToGenerativePart("train1.jpeg", "image/jpeg"),
+    // fileToGenerativePart("dog.jpeg", "image/jpeg"),
   ];
 
   const result = await model.generateContent([prompt, ...imageParts]);
